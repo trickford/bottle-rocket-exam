@@ -15,14 +15,16 @@
     "url": "git+ssh://git@github.com:trickford/bottle-rocket-exam.git"
   },
   "dependencies": {
-    "axios": "^0.18.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-css-modules": "^4.7.7",
     "react-dom": "^16.6.3",
+    "react-redux": "^5.1.1",
     "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
