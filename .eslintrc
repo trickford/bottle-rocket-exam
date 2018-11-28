@@ -1,0 +1,26 @@
+{
+	"extends": [
+		"airbnb"
+	],
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"ecmaVersion": 2018,
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"rules": {
+		"react/jsx-one-expression-per-line": 0,
+		"react/prefer-stateless-function": 0,
+		"react/jsx-indent": ["error", "tab"],
+		"react/jsx-indent-props": ["error", "tab"],
+		"indent": ["error", "tab"],
+		"no-tabs": 0,
+	},
+	"globals": {
+		"React": true,
+		"CSSModules": true,
+		"PropTypes": true,
+		"document": true,
+	}
+}
