@@ -1,3 +1,5 @@
+import API from '../config/api';
+
 export const FETCH_LOCATIONS_START = 'FETCH_LOCATIONS_START';
 export const FETCH_LOCATIONS_SUCCESS = 'FETCH_LOCATIONS_SUCCESS';
 export const FETCH_LOCATIONS_FAILURE = 'FETCH_LOCATIONS_FAILURE';
@@ -13,15 +15,14 @@ const fetchLocationsSuccess = locations => ({
 
 const fetchLocationsFailure = error => ({
 	type: FETCH_LOCATIONS_FAILURE,
-	error,
+	error: `${error}`,
 });
 
 export const getLocations = () => (dispatch) => {
 	dispatch(fetchLocationsStart());
 
-	console.log('fetch');
-
-	// fetch results here
-	// dispatch(fetchLocationsSuccess(response));
-	// dispatch(fetchLocationsFailure(error));
+	fetch(API.locations)
+		.then(response => response.json())
+		.then(response => dispatch(fetchLocationsSuccess(response)))
+		.catch(response => dispatch(fetchLocationsFailure(response)));
 };

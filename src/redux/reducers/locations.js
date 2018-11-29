@@ -15,17 +15,21 @@ export default function (state = initialState, action) {
 	case FETCH_LOCATIONS_SUCCESS:
 		return {
 			...state,
-			list: action.locations,
+			list: action.locations.restaurants,
+			error: '',
+			loading: false,
 		};
 	case FETCH_LOCATIONS_FAILURE:
 		return {
 			...state,
 			error: action.error,
+			loading: false,
 		};
 	case FETCH_LOCATIONS_START:
 	default:
 		return {
 			...state,
+			error: '',
 			loading: true,
 		};
 	}
