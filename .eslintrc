@@ -16,11 +16,13 @@
 		"react/jsx-indent-props": ["error", "tab"],
 		"indent": ["error", "tab"],
 		"no-tabs": 0,
+		"no-underscore-dangle": 0
 	},
 	"globals": {
 		"React": true,
 		"CSSModules": true,
 		"PropTypes": true,
 		"document": true,
+		"window": true
 	}
 }

@@ -17,9 +17,9 @@ const fetchLocationsFailure = error => ({
 });
 
 export const getLocations = () => (dispatch) => {
-    dispatch(fetchLocationsStart());
+	dispatch(fetchLocationsStart());
 
-    console.log('fetch')
+	console.log('fetch');
 
 	// fetch results here
 	// dispatch(fetchLocationsSuccess(response));

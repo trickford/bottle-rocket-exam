@@ -1,17 +1,19 @@
 import { Fragment } from 'react';
-import { connect } from "react-redux";
-import { getLocations } from "../../redux/actions";
+import { connect } from 'react-redux';
+import { getLocations as getLocationsAction } from '../../redux/actions';
 
 const env = process.env.NODE_ENV;
 
 class Home extends React.PureComponent {
-    constructor(props) {
-        super(props);
-    }
+	static propTypes = {
+		getLocations: PropTypes.func.isRequired,
+	};
 
-    componentWillMount() {
-        this.props.getLocations();
-    }
+	componentWillMount() {
+		const { getLocations } = this.props;
+
+		getLocations();
+	}
 
 	render() {
 		return (
@@ -26,16 +28,16 @@ class Home extends React.PureComponent {
 	}
 }
 
-const mapStateToProps = state => {
-    const { locations } = state;
-    return { locations };
+const mapStateToProps = (state) => {
+	const { locations } = state;
+	return { locations };
 };
 
 const mapDispatchToProps = dispatch => ({
-    getLocations: () => dispatch(getLocations())
+	getLocations: () => dispatch(getLocationsAction()),
 });
 
 export default connect(
 	mapStateToProps,
-	mapDispatchToProps
+	mapDispatchToProps,
 )(Home);
