@@ -37,8 +37,8 @@ class Home extends React.PureComponent {
 	render() {
 		return (
 			<Fragment>
-				<div>Home!</div>
 				{this.listLocations()}
+				<div className="slide">slide</div>
 			</Fragment>
 		);
 	}

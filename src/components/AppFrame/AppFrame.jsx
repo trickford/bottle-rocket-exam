@@ -1,5 +1,7 @@
 import { withRouter } from 'react-router';
 
+import Header from '../Header/Header';
+
 import styles from './AppFrame.scss';
 
 class AppFrame extends React.PureComponent {
@@ -12,6 +14,7 @@ class AppFrame extends React.PureComponent {
 
 		return (
 			<main styleName="content">
+                <Header />
 				{appContent}
 			</main>
 		);
