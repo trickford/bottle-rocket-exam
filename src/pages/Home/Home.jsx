@@ -7,7 +7,7 @@ class Home extends React.PureComponent {
 		getLocations: PropTypes.func.isRequired,
 		locations: PropTypes.array.isRequired,
 		error: PropTypes.string.isRequired,
-		loading: PropTypes.bool.isRequired,
+		loading: PropTypes.bool.isRequired
 	};
 
 	componentWillMount() {
@@ -47,14 +47,14 @@ class Home extends React.PureComponent {
 const mapStateToProps = state => ({
 	locations: state.locations.list,
 	error: state.locations.error,
-	loading: state.locations.loading,
+	loading: state.locations.loading
 });
 
 const mapDispatchToProps = dispatch => ({
-	getLocations: () => dispatch(getLocationsAction()),
+	getLocations: () => dispatch(getLocationsAction())
 });
 
 export default connect(
 	mapStateToProps,
-	mapDispatchToProps,
+	mapDispatchToProps
 )(Home);

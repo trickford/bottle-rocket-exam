@@ -17,7 +17,8 @@
 		"indent": ["error", "tab"],
 		"no-tabs": 0,
 		"no-underscore-dangle": 0,
-		"class-methods-use-this": 0
+		"class-methods-use-this": 0,
+		"comma-dangle": 0
 	},
 	"globals": {
 		"React": true,
