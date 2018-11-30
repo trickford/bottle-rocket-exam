@@ -1,0 +1,34 @@
+@import "~variables";
+
+.locations {
+  position: absolute;
+  width: 100%;
+  height: $content-height;
+  left: 0;
+  top: $header-height;
+  overflow-y: scroll;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail {
+  background: pink;
+  position: absolute;
+  width: 100%;
+  height: $content-height;
+  left: 100%;
+  top: $header-height;
+  transform: translateX(0);
+  opacity: 0.5;
+  transition: transform 400ms, opacity 400ms;
+  z-index: 2;
+}
+
+.detail--show {
+  composes: detail;
+  transform: translateX(-100%);
+  opacity: 1;
+}

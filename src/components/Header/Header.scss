@@ -5,10 +5,11 @@
   color: #FFF;
   display: flex;
   position: relative;
-  height: 60px;
+  height: $header-height;
   padding: 0 60px;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .title {

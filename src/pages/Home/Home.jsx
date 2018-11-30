@@ -1,6 +1,10 @@
 import { Fragment } from 'react';
 import { connect } from 'react-redux';
+
 import { getLocations as getLocationsAction } from '../../redux/actions';
+import LocationCard from '../../components/LocationCard/LocationCard';
+
+import styles from './Home.scss';
 
 class Home extends React.PureComponent {
 	static propTypes = {
@@ -10,35 +14,61 @@ class Home extends React.PureComponent {
 		loading: PropTypes.bool.isRequired
 	};
 
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			detailViewOpen: false
+		}
+	}
+
 	componentWillMount() {
 		const { getLocations } = this.props;
 
 		getLocations();
 	}
 
+    openDetailView = () => {
+        this.setState({ detailViewOpen: true });
+    };
+
+    closeDetailView = () => {
+        this.setState({ detailViewOpen: false });
+    };
+
 	listLocations() {
 		const { locations } = this.props;
 
 		if (locations.length) {
-			return locations.map((location, id) => this.renderLocation({ location, id }));
+			return locations.map((location, id) => (
+				<LocationCard
+					{...location}
+					key={id}
+                    onClick={this.openDetailView}
+				/>
+			));
 		}
 
 		return null;
 	}
 
-	renderLocation({ location, id }) {
-		return (
-			<div className="location" key={id}>
-				{location.name}
-			</div>
-		);
-	}
-
 	render() {
+		const { detailViewOpen } = this.state;
+		const detailViewClass = detailViewOpen ? 'detail--show' : 'detail';
+
 		return (
 			<Fragment>
-				{this.listLocations()}
-				<div className="slide">slide</div>
+                <div styleName="locations">
+                    <div styleName="list">
+                        {this.listLocations()}
+                        {this.listLocations()}
+                        {this.listLocations()}
+                        {this.listLocations()}
+                    </div>
+                </div>
+				<div styleName={detailViewClass} onClick={this.closeDetailView}>
+					map view here
+				</div>
 			</Fragment>
 		);
 	}
@@ -57,4 +87,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(Home);
+)(CSSModules(Home, styles));

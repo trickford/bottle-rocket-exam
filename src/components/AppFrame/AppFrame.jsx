@@ -14,7 +14,7 @@ class AppFrame extends React.PureComponent {
 
 		return (
 			<main styleName="content">
-                <Header />
+				<Header />
 				{appContent}
 			</main>
 		);

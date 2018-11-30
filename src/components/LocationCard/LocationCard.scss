@@ -1,0 +1,47 @@
+@import "~variables";
+
+$card-height: 180px;
+$font-size--name: 16px;
+$font-size--category: 12px;
+$font-color: #FFF;
+
+.card {
+  background: $color--brand;
+  height: $card-height;
+  color: $font-color;
+  padding: $gutter--large;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &::before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('../../images/locationCardGradient.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: '';
+  }
+}
+
+.name {
+  font-size: $font-size--name;
+  font-weight: $font-weight--bold;
+  z-index: 1;
+}
+
+.category {
+  font-size: $font-size--category;
+  z-index: 1;
+}
