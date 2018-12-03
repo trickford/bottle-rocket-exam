@@ -19,7 +19,7 @@ class Home extends React.PureComponent {
 
 		this.state = {
 			detailViewOpen: false
-		}
+		};
 	}
 
 	componentWillMount() {
@@ -28,13 +28,13 @@ class Home extends React.PureComponent {
 		getLocations();
 	}
 
-    openDetailView = () => {
-        this.setState({ detailViewOpen: true });
-    };
+	openDetailView = () => {
+		this.setState({ detailViewOpen: true });
+	};
 
-    closeDetailView = () => {
-        this.setState({ detailViewOpen: false });
-    };
+	closeDetailView = () => {
+		this.setState({ detailViewOpen: false });
+	};
 
 	listLocations() {
 		const { locations } = this.props;
@@ -44,7 +44,7 @@ class Home extends React.PureComponent {
 				<LocationCard
 					{...location}
 					key={id}
-                    onClick={this.openDetailView}
+					onClick={this.openDetailView}
 				/>
 			));
 		}
@@ -58,14 +58,14 @@ class Home extends React.PureComponent {
 
 		return (
 			<Fragment>
-                <div styleName="locations">
-                    <div styleName="list">
-                        {this.listLocations()}
-                        {this.listLocations()}
-                        {this.listLocations()}
-                        {this.listLocations()}
-                    </div>
-                </div>
+				<div styleName="locations">
+					<div styleName="list">
+						{this.listLocations()}
+						{this.listLocations()}
+						{this.listLocations()}
+						{this.listLocations()}
+					</div>
+				</div>
 				<div styleName={detailViewClass} onClick={this.closeDetailView}>
 					map view here
 				</div>

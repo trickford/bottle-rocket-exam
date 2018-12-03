@@ -34,14 +34,7 @@ module.exports = {
 					{
 						loader: 'babel-loader',
 						options: {
-							sourceMap: true,
-							presets: [
-								'@babel/preset-env',
-								'@babel/preset-react'
-							],
-							plugins: [
-								'@babel/plugin-proposal-class-properties'
-							]
+							sourceMap: true
 						}
 					}
 				],
